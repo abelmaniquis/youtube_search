@@ -1,0 +1,13 @@
+*{
+    text-align:center;
+}
+
+button{
+    border:none;
+    background-color:red;
+}
+
+ul{
+    list-style:none;
+    display:block;
+}
