@@ -4,7 +4,7 @@
 $(document).ready(function () {
 
 	$("button").click(function () {
-
+        $("ul").empty();
 		$.ajax({
 			url: 'https://www.googleapis.com/youtube/v3/search',
 			data: {
