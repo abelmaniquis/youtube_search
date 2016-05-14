@@ -1,14 +1,22 @@
 *{
-    text-align:center;
     font-family: 'Source Sans Pro', sans-serif;
 }
 
+
+.stuff-container{
+    text-align:center;
+}
+
+.result-container{
+    text-align:center;
+}
 a:link{
     text-decoration:none;
     color:black;
 }
 
 h1{
+    text-align:center;
     color:red;
 }
 

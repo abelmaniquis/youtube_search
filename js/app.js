@@ -4,7 +4,17 @@
 $(document).ready(function () {
 
 	$("button").click(function () {
-        $("ul").empty();
+        getInput();
+	});
+	
+	$(document).keydown(function(e){
+	  if(e.keyCode == 13){
+	      getInput();
+	  }  
+	});
+	
+	function getInput(){
+	    $("ul").empty();
 		$.ajax({
 			url: 'https://www.googleapis.com/youtube/v3/search',
 			data: {
@@ -20,7 +30,7 @@ $(document).ready(function () {
 				});
 			},
 		});
-	});
+	}
 
 	function getOutput(item) {
 		var videoId = item.id.videoId;
@@ -33,11 +43,16 @@ $(document).ready(function () {
 		var output =
 		    '<h3><a class="fancybox fancybox.iframe" href="http://www.youtube.com/embed/' + videoId + '">' + title + '</a></h3>' +
 			'<li>' +
+			
 			'<div class="list-left">' +
-			"<a href = http://www.youtube.com/embed/" + videoId + ">" + '<img src="' + thumb + '">' + "</a>"
+			"<a href = http://www.youtube.com/embed/" + videoId + ">" + 
+			'<img src="' + thumb + '">' + 
+			"</a>" +
+			
 			'</div>' +
 			'<div class="list-right">' +
 			'<p>By <span class="cTitle">' + channelTitle + '</span> on ' + videoDate + '</p>' +
+			'<li>' +
 			'<p>' + description + '</p>' +
 			'</div>' +
 			'</li>' +
